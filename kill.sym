@@ -16,7 +16,6 @@
 00000333 getpid
 00000650 malloc
 00000343 sleep
-00000363 set_priority
 000002c3 pipe
 000002d3 write
 0000030b fstat

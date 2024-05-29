@@ -16,7 +16,6 @@
 000003d3 getpid
 000006f0 malloc
 000003e3 sleep
-00000403 set_priority
 00000b20 number_of_processes
 00000363 pipe
 00000373 write

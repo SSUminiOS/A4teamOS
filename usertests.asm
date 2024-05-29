@@ -6042,12 +6042,10 @@ SYSCALL(getps)
     397b:	b8 17 00 00 00       	mov    $0x17,%eax
     3980:	cd 40                	int    $0x40
     3982:	c3                   	ret    
-
-00003983 <set_priority>:
-SYSCALL(set_priority)
-    3983:	b8 18 00 00 00       	mov    $0x18,%eax
-    3988:	cd 40                	int    $0x40
-    398a:	c3                   	ret    
+    3983:	66 90                	xchg   %ax,%ax
+    3985:	66 90                	xchg   %ax,%ax
+    3987:	66 90                	xchg   %ax,%ax
+    3989:	66 90                	xchg   %ax,%ax
     398b:	66 90                	xchg   %ax,%ax
     398d:	66 90                	xchg   %ax,%ax
     398f:	90                   	nop

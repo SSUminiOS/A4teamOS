@@ -655,12 +655,10 @@ SYSCALL(getps)
  3eb:	b8 17 00 00 00       	mov    $0x17,%eax
  3f0:	cd 40                	int    $0x40
  3f2:	c3                   	ret    
-
-000003f3 <set_priority>:
-SYSCALL(set_priority)
- 3f3:	b8 18 00 00 00       	mov    $0x18,%eax
- 3f8:	cd 40                	int    $0x40
- 3fa:	c3                   	ret    
+ 3f3:	66 90                	xchg   %ax,%ax
+ 3f5:	66 90                	xchg   %ax,%ax
+ 3f7:	66 90                	xchg   %ax,%ax
+ 3f9:	66 90                	xchg   %ax,%ax
  3fb:	66 90                	xchg   %ax,%ax
  3fd:	66 90                	xchg   %ax,%ax
  3ff:	90                   	nop

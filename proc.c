@@ -6,7 +6,7 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
-//ee
+
  int ac=8, dc=3;
 struct {
   struct spinlock lock;

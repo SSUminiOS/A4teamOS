@@ -2132,12 +2132,10 @@ SYSCALL(getps)
      ecb:	b8 17 00 00 00       	mov    $0x17,%eax
      ed0:	cd 40                	int    $0x40
      ed2:	c3                   	ret    
-
-00000ed3 <set_priority>:
-SYSCALL(set_priority)
-     ed3:	b8 18 00 00 00       	mov    $0x18,%eax
-     ed8:	cd 40                	int    $0x40
-     eda:	c3                   	ret    
+     ed3:	66 90                	xchg   %ax,%ax
+     ed5:	66 90                	xchg   %ax,%ax
+     ed7:	66 90                	xchg   %ax,%ax
+     ed9:	66 90                	xchg   %ax,%ax
      edb:	66 90                	xchg   %ax,%ax
      edd:	66 90                	xchg   %ax,%ax
      edf:	90                   	nop

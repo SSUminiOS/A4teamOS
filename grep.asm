@@ -1003,12 +1003,10 @@ SYSCALL(getps)
  66b:	b8 17 00 00 00       	mov    $0x17,%eax
  670:	cd 40                	int    $0x40
  672:	c3                   	ret    
-
-00000673 <set_priority>:
-SYSCALL(set_priority)
- 673:	b8 18 00 00 00       	mov    $0x18,%eax
- 678:	cd 40                	int    $0x40
- 67a:	c3                   	ret    
+ 673:	66 90                	xchg   %ax,%ax
+ 675:	66 90                	xchg   %ax,%ax
+ 677:	66 90                	xchg   %ax,%ax
+ 679:	66 90                	xchg   %ax,%ax
  67b:	66 90                	xchg   %ax,%ax
  67d:	66 90                	xchg   %ax,%ax
  67f:	90                   	nop

@@ -25,7 +25,6 @@
 000011c0 malloc
 00000eb3 sleep
 000019dc whitespace
-00000ed3 set_priority
 00000190 fork1
 00000ab0 nulterminate
 00000e33 pipe

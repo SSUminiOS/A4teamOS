@@ -18,7 +18,6 @@
 000001d0 grep
 00000960 malloc
 00000653 sleep
-00000673 set_priority
 000005d3 pipe
 000005e3 write
 0000061b fstat

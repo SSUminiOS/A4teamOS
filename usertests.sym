@@ -26,7 +26,6 @@
 00000200 exitiputtest
 000033b0 fsfull
 00001bf0 bigdir
-00003983 set_priority
 00002c90 forktest
 00000670 writetest1
 00002400 bigwrite

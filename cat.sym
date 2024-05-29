@@ -17,7 +17,6 @@
 00000090 cat
 00000700 malloc
 000003f3 sleep
-00000413 set_priority
 00000373 pipe
 00000383 write
 000003bb fstat
