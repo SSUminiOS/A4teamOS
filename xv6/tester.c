@@ -22,8 +22,8 @@ int main(int argc, char *argv[]) {
             volatile int i;
             for (volatile int k = 0; k < number_of_processes; k++) {  //io time
                 if (k <= j) {
-                    sleep(200);
-                    //getps();
+                    sleep(20000);
+                    getps();
                 } else {
                     for (i = 0; i < 200000000; i++) { //cpu time
                         ; }

@@ -503,7 +503,11 @@ scheduler(void)
         // to release ptable.lock and then reacquire it
         // before jumping back to us.
         c->proc = p;
-        switchuvm(p);
+	// check selected process is thread
+	//if (p->tgid == p->parent->tgid)
+	//	c->ts.esp0 = (uint)p->kstack + KSTACKSIZE;
+	//else
+		switchuvm(p);
         p->num_run++;
         p->state = RUNNING;
 
@@ -870,6 +874,17 @@ getps(void)
 	return ret;
 }
 
+int printinfo(struct proc *np) {
+  struct proc *p = np;
+  cprintf("PID : %d\n", p->tgid);
+  cprintf("TID : %d\n",p->pid);
+  cprintf("Page Directory Address: %p\n", p->pgdir);
+  cprintf("Stack Pointer Value: %p\n", p->tf->esp);
+  cprintf("Start Function Address: %p\n", p->function);
+  cprintf("Memory Size: %d bytes\n\n", p->sz);
+  return 0;
+}
+
 /* Clone, Join system call*/
 int
 clone(void (*function)(void*), void* arg, void* stack)
@@ -891,6 +906,8 @@ clone(void (*function)(void*), void* arg, void* stack)
   np->parent = curproc;
   *np->tf = *curproc->tf;
   np->tgid = curproc->tgid; /* Same tgid with parent => thread */
+
+  np->function = function;
 
   // Stack pointer is at the bottom, bring it up; push return
   // address and arg
@@ -924,7 +941,13 @@ clone(void (*function)(void*), void* arg, void* stack)
 
   np->state = RUNNABLE;
 
+  #ifdef MLFQ
+  		add_proc_to_q(np, 0);
+  #endif
+
   release(&ptable.lock);
+
+  printinfo(np);
 
   return pid;
 }
@@ -973,3 +996,15 @@ join(int tid, void** stack)
   }
 }
 
+
+int sys_threadinfo(void)
+{
+	struct proc *p = myproc();
+	cprintf("PID : %d\n", p->tgid);
+	cprintf("TID : %d\n",p->pid);
+	cprintf("Page Directory Address : %p\n", p->pgdir);
+	cprintf("Stack Pointer Value : %p\n", p->tf->esp);
+	cprintf("Statr Function Address : %p\n", p->function);
+	cprintf("Memory Size : %d bytes\n\n", p->sz);
+	return 0;
+}

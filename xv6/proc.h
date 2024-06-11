@@ -63,6 +63,7 @@ struct proc {
   int curr_ticks;
   int change_q;
   int enter;
+  void (*function)(void*);	//Thread start function address
   int ticks; // FCFS
 };
 
