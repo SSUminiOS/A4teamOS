@@ -27,3 +27,4 @@
 #define SYS_clone 25
 #define SYS_join 26
 #define SYS_gettid 27
+#define SYS_threadinfo 28

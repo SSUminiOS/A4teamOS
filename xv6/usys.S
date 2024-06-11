@@ -34,4 +34,5 @@ SYSCALL(getps)
 /* for thread */
 SYSCALL(clone)
 SYSCALL(join)
-SYSCALL(gettid) 
+SYSCALL(gettid)
+SYSCALL(threadinfo) 

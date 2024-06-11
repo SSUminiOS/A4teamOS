@@ -30,6 +30,7 @@ int getps(void);
 int clone(void (*function)(void*), void*, void*);
 int join(int, void**);
 int gettid(void);
+int threadinfo(void);
 
 // ulib.c
 int stat(const char*, struct stat*);
