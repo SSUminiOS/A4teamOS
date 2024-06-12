@@ -1,2 +1,21 @@
 # xv6_OS_project
 ---
+FCFS 동작
+-> make qemu-nox SCHEDULER=FCFS
+
+---
+RR 동작 
+-> make qemu-nox SCHEDULER=RR
+
+---
+MLFQ 동작
+-> make qemu-nox SCHEDULER=MLFQ
+
+---
+tester.c
+-> scheduler 검증 코드
+
+test.c
+-> thread 검증 코드
+
+
